@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using WLC.Admin.Infrastructure.Abstract;
+using WLC.Client.Infrastructure.Abstract;
 
-namespace WLC.Admin.Infrastructure.Concrete
+namespace WLC.Client.Infrastructure.Concrete
 {
     public class FormsAuthProvider : IAuthProvider
     {

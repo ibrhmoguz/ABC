@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace WLC.Admin.Models
+namespace WLC.Client.Models
 {
     public class LoginViewModel
     {

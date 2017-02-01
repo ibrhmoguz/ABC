@@ -8,11 +8,11 @@ using System.Web.Mvc;
 using System.Web.WebPages;
 using Newtonsoft.Json;
 using Ninject.Activation;
-using WLC.Admin.Infrastructure.Concrete;
+using WLC.Client.Infrastructure.Concrete;
 using WLC.Domain.Entities;
 using WLC.Domain.Interface;
 
-namespace WLC.Admin.Controllers
+namespace WLC.Client.Controllers
 {
     [Authorize]
     [SessionExpireFilter]

@@ -4,13 +4,13 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WLC.Admin.Infrastructure.Abstract;
+using WLC.Client.Infrastructure.Abstract;
 using WLC.Domain.Interface;
-using WLC.Admin.Models;
+using WLC.Client.Models;
 using WLC.Domain.Entities;
 using Newtonsoft.Json;
 
-namespace WLC.Admin.Controllers
+namespace WLC.Client.Controllers
 {
     public class AccountController : Controller
     {

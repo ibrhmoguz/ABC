@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WLC.Admin.Models
+namespace WLC.Client.Models
 {
     public class PagingInfo
     {

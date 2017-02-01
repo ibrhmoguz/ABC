@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
-using WLC.Admin.Infrastructure.Concrete;
+using WLC.Client.Infrastructure.Concrete;
 using WLC.Domain.Interface;
 
-namespace WLC.Admin.Controllers
+namespace WLC.Client.Controllers
 {
     [Authorize]
     [SessionExpireFilter]

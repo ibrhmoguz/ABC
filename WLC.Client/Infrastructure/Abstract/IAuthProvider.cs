@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WLC.Admin.Infrastructure.Abstract
+namespace WLC.Client.Infrastructure.Abstract
 {
     public interface IAuthProvider
     {

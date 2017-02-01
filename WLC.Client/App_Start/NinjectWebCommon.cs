@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(WLC.Admin.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(WLC.Admin.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(WLC.Client.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(WLC.Client.App_Start.NinjectWebCommon), "Stop")]
 
-namespace WLC.Admin.App_Start
+namespace WLC.Client.App_Start
 {
     using System;
     using System.Web;
@@ -61,7 +61,7 @@ namespace WLC.Admin.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            System.Web.Mvc.DependencyResolver.SetResolver(new WLC.Admin.Infrastructure.NinjectDependencyResolver(kernel));
+            System.Web.Mvc.DependencyResolver.SetResolver(new WLC.Client.Infrastructure.NinjectDependencyResolver(kernel));
         }        
     }
 }

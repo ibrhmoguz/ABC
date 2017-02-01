@@ -5,12 +5,12 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using Ninject;
-using WLC.Admin.Infrastructure.Abstract;
-using WLC.Admin.Infrastructure.Concrete;
+using WLC.Client.Infrastructure.Abstract;
+using WLC.Client.Infrastructure.Concrete;
 using WLC.Domain.Interface;
 using WLC.Domain.Repo;
 
-namespace WLC.Admin.Infrastructure
+namespace WLC.Client.Infrastructure
 {
     public class NinjectDependencyResolver : IDependencyResolver
     {

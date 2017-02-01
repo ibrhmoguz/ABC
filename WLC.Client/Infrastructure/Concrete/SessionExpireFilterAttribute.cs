@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WLC.Admin.Infrastructure.Concrete
+namespace WLC.Client.Infrastructure.Concrete
 {
     public class SessionExpireFilterAttribute : ActionFilterAttribute
     {

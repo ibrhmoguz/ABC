@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using WLC.Admin.Controllers;
+using WLC.Client.Controllers;
 using WLC.Domain.Interface;
 
 namespace WLC.UnitTest

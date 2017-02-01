@@ -1,44 +1,43 @@
-﻿var gulp = require('gulp'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    plumber = require('gulp-plumber'),
-    templateCache = require('gulp-angular-templatecache'),
-    //sass = require('gulp-sass'),
-    //csso = require('gulp-csso'),
-    dist = 'Scripts/dist';
+﻿var gulp = require("gulp"),
+  rimraf = require("rimraf"),
+  concat = require("gulp-concat"),
+  cssmin = require("gulp-cssmin"),
+  uglify = require("gulp-uglify");
 
-//gulp.task('sass', function () {
-//    gulp.src('Content/styles.scss')
-//        .pipe(plumber())
-//        .pipe(sass({ errLogToConsole: true }))
-//        .pipe(csso())
-//        .pipe(gulp.dest('Content'));
-//});
+var paths = {
+    scriptPath: "./Scripts/",
+    cssPath: "./Content/CSS/"
+};
 
-gulp.task('compressScripts', function () {
-    gulp.src([
-        'app/**/*.js'
-    ])
-        .pipe(plumber())
-        .pipe(concat('scripts.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(dist));
+paths.js = paths.scriptPath + "**/*.js";
+paths.minJs = paths.scriptPath + "**/*.min.js";
+paths.css = paths.cssPath + "*.css";
+paths.minCss = paths.cssPath + "*.min.css";
+paths.concatJsDest = paths.scriptPath + "site.min.js";
+paths.concatCssDest = paths.cssPath + "site.min.css";
+
+gulp.task("clean:js", function (cb) {
+    rimraf(paths.concatJsDest, cb);
 });
 
-gulp.task('templates', function () {
-    gulp.src('app/customersApp/views/**/*.html')
-        .pipe(plumber())
-        .pipe(templateCache({ root: 'app/customersApp/views', module: 'customersApp' }))
-        .pipe(gulp.dest(dist));
+gulp.task("clean:css", function (cb) {
+    rimraf(paths.concatCssDest, cb);
 });
 
-gulp.task('watch', function () {
+gulp.task("clean", ["clean:js", "clean:css"]);
 
-    //gulp.watch('Content/*.scss', ['sass']);
-
-    gulp.watch(['app/**/*.js'],
-        ['compressScripts']);
-
+gulp.task("min:js", function () {
+    return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
+      .pipe(concat(paths.concatJsDest))
+      .pipe(uglify())
+      .pipe(gulp.dest("."));
 });
 
-gulp.task('default', ['compressScripts', 'templates', 'watch']);
+gulp.task("min:css", function () {
+    return gulp.src([paths.css, "!" + paths.minCss])
+      .pipe(concat(paths.concatCssDest))
+      .pipe(cssmin())
+      .pipe(gulp.dest("."));
+});
+
+gulp.task("min", ["min:js", "min:css"]);
