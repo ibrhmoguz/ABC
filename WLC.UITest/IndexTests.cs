@@ -56,7 +56,7 @@ namespace WLC.UITest
         public void SorgulamaMenuItem()
         {
             IWebDriver ngDriver = new NgWebDriver(driver);
-            ngDriver.Navigate().GoToUrl("http://localhost:5485/#/Liste");
+            ngDriver.Navigate().GoToUrl("http://localhost:5485/#/Default/Liste");
             // Assert navigation items
             Assert.AreEqual("<i class=\"fa fa - search\"></i> Okul Listesi", ngDriver.FindElement(By.Id("masterTitle")).Text);
             Assert.IsTrue(ngDriver.FindElement(By.ClassName("Rapor")).Displayed);

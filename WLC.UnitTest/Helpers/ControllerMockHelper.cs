@@ -21,7 +21,7 @@ namespace WLC.UnitTest
             return mockControllerContext.Object;
         }
 
-        public static ControllerContext FakeControllerNullContext()
+        public static ControllerContext FakeControllerContextNullSession()
         {
             var mockControllerContext = new Mock<ControllerContext>();
             mockControllerContext.SetupGet(x => x.HttpContext.Session["CurrentUserId"]).Returns(null);

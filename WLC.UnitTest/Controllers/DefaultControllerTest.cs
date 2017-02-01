@@ -12,13 +12,13 @@ namespace WLC.UnitTest
     public class DefaultControllerTest
     {
         [TestMethod]
-        public void ShouldLoginView()
+        public void ShouldRedirectToLoginView()
         {
             var wlcTanimRepo = new Mock<IWLCTanimRepo>();
             var kullaniciYapilanAp = new Mock<IKullaniciYapilanAp>();
             var controller = new DefaultController(wlcTanimRepo.Object, kullaniciYapilanAp.Object);
 
-            controller.ControllerContext = ControllerMockHelper.FakeControllerNullContext();
+            controller.ControllerContext = ControllerMockHelper.FakeControllerContextNullSession();
 
             var result = controller.Index();
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));

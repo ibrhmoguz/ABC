@@ -1,4 +1,4 @@
-﻿wlcApp.controller('IndexController', function ($scope, $rootScope, $http, $compile, commonService) {
+﻿wlcApp.controller('IndexController', function ($scope, $rootScope, $http, $compile, $window, commonService) {
 
     $scope.CheckAuthentication = function () {
         $http.get('Account/IsAuthenticated')
@@ -9,7 +9,6 @@
                  }
                  else {
                      $rootScope.IsAuthenticated = true;
-                     // alert("CheckAuthentication:" + $rootScope.IsAuthenticated);
                  }
              }, function errorCallback(msg) {
                  FailAuthentication();
@@ -23,13 +22,6 @@
 
     $scope.PageLoad = function (url) {
 
-        $scope.CheckAuthentication();
-        if (!$rootScope.IsAuthenticated)
-        {
-            alert("not authenticate");
-            return;
-        }
-
         $http.get(url)
              .then(function successCallback(msg) {
                  var templateElement = angular.element(msg.data);
@@ -41,6 +33,15 @@
              })
     };
 
+    $scope.NavigatePage = function () {
+        if ($window.location.href.indexOf("#") > -1) {
+            var url = window.location.href;
+            var method = url.substring(url.indexOf("#") + 1);
+            $scope.PageLoad(method);
+        }
+    }
+
     $rootScope.IsAuthenticated = false;
     $scope.CheckAuthentication();
+    $scope.NavigatePage();
 });

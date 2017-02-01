@@ -6,7 +6,7 @@ var httpInterceptor = function ($provide, $httpProvider) {
                 return response || $q.when(response);
             },
             responseError: function (rejection) {
-                commonOpsService.MessageBox(rejection.data, "Error");
+                commonService.MessageBox(rejection.data, "Error");
                 // TODO: Add Async client side logging 
                 return $q.reject(rejection);
             }
@@ -17,24 +17,22 @@ var httpInterceptor = function ($provide, $httpProvider) {
 
 // Angular module
 var wlcApp = angular.module("wlcApp", []).config(httpInterceptor);
+                    //.config(httpInterceptor, function ($routeProvider) {
+                    //    var viewBase = '/app/customersApp/views/';
 
-//wlcApp.config(['$routeProvider', function ($routeProvider) {
-//    var viewBase = '/app/customersApp/views/';
-
-//    $routeProvider
-//        .when('/Liste', {
-//            controller: 'CustomersController',
-//            templateUrl: viewBase + 'customers/customers.html',
-//            controllerAs: 'vm'
-//        })
-//        .when('/Rapord', {
-//            controller: 'CustomerOrdersController',
-//            templateUrl: viewBase + 'customers/customerOrders.html',
-//            controllerAs: 'vm'
-//        })
-//        .otherwise({ redirectTo: '/customers' });
-
-//}]);
+                    //    $routeProvider
+                    //        .when('/Liste', {
+                    //            controller: 'ListController',
+                    //            templateUrl: 'Default/Liste',
+                    //            controllerAs: 'vm'
+                    //        })
+                    //        .when('/Rapor', {
+                    //            controller: 'RaporController',
+                    //            templateUrl: 'Default/Rapor',
+                    //            controllerAs: 'vm'
+                    //        })
+                    //        .otherwise({ redirectTo: '/' });
+                    //});
 
 
 

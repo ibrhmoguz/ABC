@@ -73,8 +73,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\DefaultControllerTest.cs" />
-    <Compile Include="Helpers\MockHelperRepo.cs" />
-    <Compile Include="Helpers\MockHelperController.cs" />
+    <Compile Include="Helpers\RepoMockHelper.cs" />
+    <Compile Include="Helpers\ControllerMockHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
