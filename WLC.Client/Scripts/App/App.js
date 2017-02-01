@@ -1,6 +1,6 @@
 ﻿// Global Exception Handling of Ajax Calls 
 var httpInterceptor = function ($provide, $httpProvider) {
-    $provide.factory('httpInterceptor', function ($q, commonOpsService) {
+    $provide.factory('httpInterceptor', function ($q, commonService) {
         return {
             response: function (response) {
                 return response || $q.when(response);

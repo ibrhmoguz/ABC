@@ -1,4 +1,4 @@
-﻿wlcApp.controller('IndexController', function ($scope, $rootScope, $http, $compile, commonOpsService) {
+﻿wlcApp.controller('IndexController', function ($scope, $rootScope, $http, $compile, commonService) {
 
     $scope.CheckAuthentication = function () {
         $http.get('Account/IsAuthenticated')

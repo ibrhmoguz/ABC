@@ -1,5 +1,5 @@
 ﻿
-wlcApp.service('commonOpsService', function () {
+wlcApp.service('commonService', function () {
 
     // Show message box.
     this.MessageBox = function (msj, title) {
