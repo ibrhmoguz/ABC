@@ -156,25 +156,25 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="Content\CSS\AdminLTE.min.css" />
+    <Content Include="Content\CSS\AdminLTE.css" />
     <Content Include="Content\CSS\bootstrap-theme.min.css" />
-    <Content Include="Content\CSS\bootstrap.min.css" />
+    <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\datepicker3.css" />
-    <Content Include="Content\CSS\font-awesome.min.css" />
-    <Content Include="Content\CSS\ionicons.min.css" />
+    <Content Include="Content\CSS\font-awesome.css" />
+    <Content Include="Content\CSS\ionicons.css" />
     <Content Include="Content\CSS\select2.min.css" />
-    <Content Include="Content\CSS\skin-blue.min.css" />
+    <Content Include="Content\CSS\site.min.css" />
+    <Content Include="Content\CSS\skin-blue.css" />
     <Content Include="Content\Image\loader.gif" />
     <Content Include="Content\Image\userProfile.jpg" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="Scripts\Api\angular.js" />
+    <Content Include="Scripts\Api\app.js" />
+    <Content Include="Scripts\Api\bootstrap.js" />
+    <Content Include="Scripts\Api\jquery.js" />
     <Content Include="Scripts\App\App.js" />
-    <Content Include="Scripts\Api\ai.0.15.0-build58334.js" />
-    <Content Include="Scripts\Api\ai.0.15.0-build58334.min.js" />
-    <Content Include="Scripts\Api\angular1.6.1.min.js" />
-    <Content Include="Scripts\Api\app.min.js" />
     <Content Include="Scripts\Api\bootstrap-datepicker.js" />
-    <Content Include="Scripts\Api\bootstrap.min.js" />
     <Content Include="Content\fonts\ODelI1aHBYDBqgeIAH2zlC2Q8seG17bfDXYR_jUsrzg.woff2" />
     <Content Include="Content\fonts\ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2" />
     <Content Include="Content\fonts\toadOcfmlt9b38dHJxOBGCOFnW3Jk0f09zW_Yln67Ac.woff2" />
@@ -200,13 +200,11 @@
     <Content Include=".bin\git.cmd" />
     <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\WLC_Publish.pubxml" />
-    <None Include="Scripts\Api\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\Api\bootstrap.validator.min.js" />
     <Content Include="Scripts\Api\buttons.html5.min.js" />
     <Content Include="Scripts\Api\buttons.print.min.js" />
     <Content Include="Scripts\Api\dataTables.buttons.min.js" />
     <Content Include="Scripts\Api\dropzone.min.js" />
-    <Content Include="Scripts\Api\jquery-2.2.0.min.js" />
     <Content Include="Scripts\Api\jquery-ui.min.js" />
     <Content Include="Scripts\Api\jquery.resizable.js" />
     <Content Include="Scripts\Api\jquery.sortable.js" />
@@ -218,6 +216,7 @@
     <Content Include="Scripts\App\Controller\ListController.js" />
     <Content Include="Scripts\App\Controller\RaporController.js" />
     <Content Include="Scripts\App\Service\CommonService.js" />
+    <Content Include="Scripts\site.min.js" />
     <Content Include="Test\Helpers\serviceFactories.js" />
     <Content Include="Test\karma.conf.js" />
     <Content Include="Test\Lib\angular-animate.js" />
@@ -274,9 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Default\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\Api\jquery-2.2.0.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,6 +4,8 @@
   cssmin = require("gulp-cssmin"),
   uglify = require("gulp-uglify");
 
+
+
 var paths = {
     scriptPath: "./Scripts/",
     cssPath: "./Content/CSS/"
@@ -26,17 +28,32 @@ gulp.task("clean:css", function (cb) {
 
 gulp.task("clean", ["clean:js", "clean:css"]);
 
-gulp.task("min:js", function () {
-    return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
-      .pipe(concat(paths.concatJsDest))
-      .pipe(uglify())
+gulp.task("min:css", function () {
+    return gulp.src([
+        './Content/CSS/bootstrap.css',
+        './Content/CSS/font-awesome.css',
+        './Content/CSS/ionicons.css',
+        './Content/CSS/AdminLTE.css',
+        './Content/CSS/skin-blue.css'
+    ]).pipe(concat(paths.concatCssDest))
+      .pipe(cssmin())
       .pipe(gulp.dest("."));
 });
 
-gulp.task("min:css", function () {
-    return gulp.src([paths.css, "!" + paths.minCss])
-      .pipe(concat(paths.concatCssDest))
-      .pipe(cssmin())
+gulp.task("min:js", function () {
+    return gulp.src([
+        './Scripts/Api/angular.js',
+        './Scripts/Api/jquery.js',
+        './Scripts/Api/bootstrap.js',
+        './Scripts/Api/app.js',
+        './Scripts/App/App.js',
+        './Scripts/App/Service/CommonService.js',
+        './Scripts/App/Controller/IndexController.js',
+        './Scripts/App/Controller/ListController.js',
+        './Scripts/App/Controller/RaporController.js'
+    ], { base: "." })
+      .pipe(concat(paths.concatJsDest))
+      .pipe(uglify({ mangle: false }))
       .pipe(gulp.dest("."));
 });
 
