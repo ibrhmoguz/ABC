@@ -31,13 +31,21 @@
                      $('#mainContentDiv').html(clonedElement);
                  });
              })
+
+        $('#HiddenReturnUrl').text(url);
     };
 
     $scope.NavigatePage = function () {
+
         if ($window.location.href.indexOf("#") > -1) {
             var url = window.location.href;
             var method = url.substring(url.indexOf("#") + 1);
             $scope.PageLoad(method);
+        }
+
+        var returnUrl = $('#HiddenReturnUrl').text();
+        if (returnUrl != '') {
+            $scope.PageLoad(returnUrl);
         }
     }
 

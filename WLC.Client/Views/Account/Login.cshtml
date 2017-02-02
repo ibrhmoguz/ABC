@@ -8,19 +8,19 @@
 <div class="panel">
     <div class="panel-body">
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { @id = "formLogOn" }))
         {
             <div class="form-group">
-                <label>Kullanıcı Adı:</label>
-                @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", @placeholder = "Kullanıcı Adı" })
+                <label>User Name:</label>
+                @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", @placeholder = "User name" })
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group">
-                <label>Şifre:</label>
+                <label>Password:</label>
                 @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", @placeholder = "Password", @type = "password" })
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-            <input type="submit" value="Giriş" class="btn btn-primary" />
+            <input type="submit" value="Login" class="btn btn-primary" />
 
             <span style="color:red">@Html.ValidationSummary()</span>
         }

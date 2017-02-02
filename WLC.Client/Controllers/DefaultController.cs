@@ -9,6 +9,7 @@ using System.Web.WebPages;
 using Newtonsoft.Json;
 using Ninject.Activation;
 using WLC.Client.Infrastructure.Concrete;
+using WLC.Client.Models;
 using WLC.Domain.Entities;
 using WLC.Domain.Interface;
 
@@ -33,7 +34,13 @@ namespace WLC.Client.Controllers
                 return RedirectToAction("Login", "Account");
             }
             else
-                return View();
+            {
+                var returnUrl = string.Empty;
+                if (Session["CurrentUserReturnUrl"] != null)
+                    returnUrl = Session["CurrentUserReturnUrl"].ToString();
+
+                return View(new ReturnUrlModel(returnUrl));
+            }
         }
 
         public ViewResult Liste()
@@ -160,13 +167,13 @@ namespace WLC.Client.Controllers
                 iTotalRecords = totalRecords,
                 iTotalDisplayRecords = filteredList.Count(),
                 aaData = (from item in list
-                          select new[] 
+                          select new[]
                             {
-                                Convert.ToString(item.ID), 
+                                Convert.ToString(item.ID),
                                 item.IL,
                                 item.ILCE,
                                 item.OKULADI,
-                                item.OKULKODU,                                
+                                item.OKULKODU,
                                 item.TESISKODU,
                                 item.FLEXCONNAME,
                                 item.APSAYISI,
@@ -223,10 +230,10 @@ namespace WLC.Client.Controllers
             var groupedList = (from wlc in doneWlcList
                                group wlc by wlc.TARIH.Value.ToShortDateString()
                                    into wlcGrouped
-                                   select new Tuple<string, int>(
-                                       wlcGrouped.Key,
-                                       wlcGrouped.Sum(x => Convert.ToInt32(x.YAPILANAPSAYISI))
-                                       ));
+                               select new Tuple<string, int>(
+                                   wlcGrouped.Key,
+                                   wlcGrouped.Sum(x => Convert.ToInt32(x.YAPILANAPSAYISI))
+                                   ));
 
             var totalRecords = groupedList.Count();
             Func<Tuple<string, int>, string> orderFunc = (item => iSortColumnIndex == 0 ? item.Item1 : item.Item2.ToString());
@@ -239,8 +246,8 @@ namespace WLC.Client.Controllers
                 aaData = (from item in orderedList
                           select new[]
                           {
-                              item.Item1, 
-                              item.Item2.ToString() 
+                              item.Item1,
+                              item.Item2.ToString()
                           })
             };
             return JsonConvert.SerializeObject(result);
@@ -260,11 +267,11 @@ namespace WLC.Client.Controllers
                                    TARIH = k.Tarih.Value.ToShortDateString(),
                                } into x
                                group x by new
-                                {
-                                    x.Kullanici,
-                                    x.Okuladi,
-                                    x.TARIH
-                                } into wlcGrouped
+                               {
+                                   x.Kullanici,
+                                   x.Okuladi,
+                                   x.TARIH
+                               } into wlcGrouped
                                select new Tuple<string, string, string, string>(
                                    wlcGrouped.Key.TARIH,
                                    wlcGrouped.Key.Kullanici,
@@ -287,10 +294,10 @@ namespace WLC.Client.Controllers
                 iTotalRecords = totalRecords,
                 iTotalDisplayRecords = groupedList.Count(),
                 aaData = (from item in orderedList
-                          select new[] 
-                          { 
-                              item.Item1, 
-                              item.Item2, 
+                          select new[]
+                          {
+                              item.Item1,
+                              item.Item2,
                               item.Item3,
                               item.Item4
                           })
@@ -306,7 +313,7 @@ namespace WLC.Client.Controllers
             {
                 iTotalRecords = wlcTanimRepo.WLCTanimlar.Count(),
                 iTotalDisplayRecords = 1,
-                aaData = new[] { new[] { 
+                aaData = new[] { new[] {
                     toplamAp,
                     yapilanAp,
                     toplamAp - yapilanAp
@@ -345,10 +352,10 @@ namespace WLC.Client.Controllers
                 iTotalRecords = totalRecords,
                 iTotalDisplayRecords = groupedList.Count(),
                 aaData = (from item in orderedList
-                          select new[] 
-                          { 
-                              item.Item1, 
-                              item.Item2, 
+                          select new[]
+                          {
+                              item.Item1,
+                              item.Item2,
                               item.Item3,
                               item.Item4
                           })
@@ -389,9 +396,9 @@ namespace WLC.Client.Controllers
                 iTotalRecords = totalRecords,
                 iTotalDisplayRecords = groupedList.Count(),
                 aaData = (from item in orderedList
-                          select new[] 
-                          { item.Item1, 
-                              item.Item2, 
+                          select new[]
+                          { item.Item1,
+                              item.Item2,
                               item.Item3,
                               item.Item4,
                               item.Item5
@@ -448,12 +455,12 @@ namespace WLC.Client.Controllers
                 iTotalRecords = totalRecords,
                 iTotalDisplayRecords = groupedList.Count(),
                 aaData = (from item in orderedList
-                          select new[] 
-                          { 
+                          select new[]
+                          {
                               item.Item1,
                               item.Item2,
                               item.Item3,
-                              item.Item4, 
+                              item.Item4,
                               item.Item5,
                               item.Item6,
                               item.Item7

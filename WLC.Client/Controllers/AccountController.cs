@@ -31,7 +31,7 @@ namespace WLC.Client.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -42,7 +42,9 @@ namespace WLC.Client.Controllers
                     Session["CurrentUserName"] = kullanici.KullaniciAdi;
                     Session["CurrentUserName_SurName"] = kullanici.Adi + " " + kullanici.Soyadi;
                     Session["CurrentUserId"] = kullanici.KullaniciId;
-                    return Redirect(returnUrl ?? Url.Action("Index", "Default"));
+                    Session["CurrentUserReturnUrl"] = model.ReturnUrl;
+
+                    return Redirect(Url.Action("Index", "Default"));
                 }
                 else
                 {

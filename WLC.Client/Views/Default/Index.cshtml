@@ -1,6 +1,9 @@
-﻿
+﻿@model WLC.Client.Models.ReturnUrlModel
+
 @{
     ViewBag.Title = "Index";
     ViewBag.Description = "Optional description";
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
+
+<div id="HiddenReturnUrl">@Model.NavUrl</div>

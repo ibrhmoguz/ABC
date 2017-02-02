@@ -56,9 +56,9 @@ namespace WLC.UITest
         public void SorgulamaMenuItem()
         {
             IWebDriver ngDriver = new NgWebDriver(driver);
-            ngDriver.Navigate().GoToUrl("http://localhost:5485/#/Default/Liste");
+            ngDriver.Navigate().GoToUrl("http://localhost:5485/Account/Login?ReturnUrl=_Default/Liste");
             // Assert navigation items
-            Assert.AreEqual("<i class=\"fa fa - search\"></i> Okul Listesi", ngDriver.FindElement(By.Id("masterTitle")).Text);
+            Assert.AreEqual("Okul Listesi", ngDriver.FindElement(By.Id("masterTitle")).Text);
             Assert.IsTrue(ngDriver.FindElement(By.ClassName("Rapor")).Displayed);
         }
 
@@ -66,10 +66,10 @@ namespace WLC.UITest
         public void RaporlamaMenuItem()
         {
             IWebDriver ngDriver = new NgWebDriver(driver);
-            ngDriver.Navigate().GoToUrl("http://localhost:5485/#/Rapor");
+            ngDriver.Navigate().GoToUrl("http://localhost:5485/Account/Login?ReturnUrl=_Default/Rapor");
 
             // Assert navigation items
-            Assert.IsTrue(ngDriver.FindElement(By.ClassName("Sorgulama")).Displayed);
+            Assert.AreEqual("Raporlar", ngDriver.FindElement(By.Id("masterTitle")).Text);
             Assert.IsTrue(ngDriver.FindElement(By.ClassName("Rapor")).Displayed);
         }
 
