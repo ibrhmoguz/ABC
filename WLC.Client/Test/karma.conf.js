@@ -9,16 +9,15 @@ module.exports = function (config) {
             'Test/Lib/*.js',
             'Scripts/**/*.js',
 
-            //App and test scripts (order matters!)
+            //App and test scripts
             'Test/Helpers/*.js',
-            'app/wc.directives/directives/wcOverlay.js',
-            'app/wc.directives/directives/menuHighlighter.js',
             'app/customersApp/app.js', 
             'app/customersApp/**/*.js',
             'Test/Unit/*.js'
         ],
         autoWatch: true,
         browsers: ['Chrome'],
+        colors: true,
         reporters: ['progress']
     });
 };

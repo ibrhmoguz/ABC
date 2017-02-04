@@ -10,7 +10,7 @@ using System.Web.Mvc;
 using System.Web.SessionState;
 using Moq;
 
-namespace WLC.UnitTest
+namespace WLC.UnitTest_Server
 {
     public class ControllerMockHelper
     {

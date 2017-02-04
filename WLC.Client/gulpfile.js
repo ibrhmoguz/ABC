@@ -3,7 +3,7 @@
   concat = require("gulp-concat"),
   cssmin = require("gulp-cssmin"),
   uglify = require("gulp-uglify");
-
+var karma = require('karma');
 
 
 var paths = {
@@ -58,3 +58,10 @@ gulp.task("min:js", function () {
 });
 
 gulp.task("min", ["min:js", "min:css"]);
+
+gulp.task('karma', function () {
+    return gulp.src(['./Tests/*.js']).pipe(karma({
+        configFile: 'karma.conf.js',
+        action: 'watch'
+    }));
+});

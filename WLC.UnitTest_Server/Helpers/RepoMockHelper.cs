@@ -8,7 +8,7 @@ using Moq;
 using WLC.Domain.Entities;
 using WLC.Domain.Interface;
 
-namespace WLC.UnitTest
+namespace WLC.UnitTest_Server
 {
     public class RepoMockHelper
     {

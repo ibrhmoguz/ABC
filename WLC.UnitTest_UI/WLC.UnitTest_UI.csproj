@@ -7,8 +7,8 @@
     <ProjectGuid>{254D7481-AF2A-4123-82E3-57D579C51CFD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WLC.UITest</RootNamespace>
-    <AssemblyName>WLC.UITest</AssemblyName>
+    <RootNamespace>WLC.UnitTest_UI</RootNamespace>
+    <AssemblyName>WLC.UnitTest_UI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

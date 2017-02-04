@@ -7,7 +7,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using Protractor;
 
-namespace WLC.UITest
+namespace WLC.UnitTest_UI
 {
     public class IndexTests
     {
@@ -16,12 +16,7 @@ namespace WLC.UITest
         [SetUp]
         public void SetUp()
         {
-            // Using NuGet Package 'PhantomJS' (Headless browser testing for build servers)
-            //driver = new OpenQA.Selenium.PhantomJS.PhantomJSDriver();
-
-            // Using NuGet Package 'WebDriver.ChromeDriver.win32'
             driver = new OpenQA.Selenium.Chrome.ChromeDriver();
-
             driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(30));
         }
 

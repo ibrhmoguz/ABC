@@ -7,11 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLC.Domain", "WLC.Domain\WL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLC.Client", "WLC.Client\WLC.Client.csproj", "{D7483480-E1A6-4E6E-94E9-B81A742E5F23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLC.UITest", "WLC.UITest\WLC.UITest.csproj", "{254D7481-AF2A-4123-82E3-57D579C51CFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLC.UnitTest_UI", "WLC.UnitTest_UI\WLC.UnitTest_UI.csproj", "{254D7481-AF2A-4123-82E3-57D579C51CFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLC.UnitTest", "WLC.UnitTest\WLC.UnitTest.csproj", "{5390D166-584D-48B0-A622-860D1BF87F3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLC.UnitTest_Server", "WLC.UnitTest_Server\WLC.UnitTest_Server.csproj", "{5390D166-584D-48B0-A622-860D1BF87F3E}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

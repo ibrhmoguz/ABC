@@ -6,7 +6,7 @@ using Moq;
 using WLC.Client.Controllers;
 using WLC.Domain.Interface;
 
-namespace WLC.UnitTest
+namespace WLC.UnitTest_Server
 {
     [TestClass]
     public class DefaultControllerTest
