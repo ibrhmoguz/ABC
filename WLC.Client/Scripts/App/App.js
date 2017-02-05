@@ -17,22 +17,6 @@ var httpInterceptor = function ($provide, $httpProvider) {
 
 // Angular module
 var wlcApp = angular.module("wlcApp", []).config(httpInterceptor);
-                    //.config(httpInterceptor, function ($routeProvider) {
-                    //    var viewBase = '/app/customersApp/views/';
-
-                    //    $routeProvider
-                    //        .when('/Liste', {
-                    //            controller: 'ListController',
-                    //            templateUrl: 'Default/Liste',
-                    //            controllerAs: 'vm'
-                    //        })
-                    //        .when('/Rapor', {
-                    //            controller: 'RaporController',
-                    //            templateUrl: 'Default/Rapor',
-                    //            controllerAs: 'vm'
-                    //        })
-                    //        .otherwise({ redirectTo: '/' });
-                    //});
 
 
 

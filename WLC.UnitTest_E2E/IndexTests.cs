@@ -52,6 +52,7 @@ namespace WLC.UnitTest_UI
         {
             IWebDriver ngDriver = new NgWebDriver(driver);
             ngDriver.Navigate().GoToUrl("http://localhost:5485/Account/Login?ReturnUrl=_Default/Liste");
+            
             // Assert navigation items
             Assert.AreEqual("Okul Listesi", ngDriver.FindElement(By.Id("masterTitle")).Text);
             Assert.IsTrue(ngDriver.FindElement(By.ClassName("Rapor")).Displayed);

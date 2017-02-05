@@ -218,19 +218,11 @@
     <Content Include="Scripts\App\Controller\RaporController.js" />
     <Content Include="Scripts\App\Service\CommonService.js" />
     <Content Include="Scripts\site.min.js" />
-    <Content Include="Test\Helpers\serviceFactories.js" />
     <Content Include="Test\karma.conf.js" />
-    <Content Include="Test\Lib\angular-animate.js" />
     <Content Include="Test\Lib\angular-mocks.js" />
-    <Content Include="Test\Lib\angular-route.js" />
     <Content Include="Test\Lib\angular.js" />
-    <Content Include="Test\Unit\customersControllerSpec.js" />
-    <Content Include="Test\Unit\customersServiceSpec.js" />
-    <Content Include="Test\Unit\dataServiceSpec.js" />
-    <Content Include="Test\Unit\modalServiceSpec.js" />
-    <Content Include="Test\Unit\wcOverlaySpec.js" />
-    <Content Include="Test\Unit\wcUniqueSpec.js" />
     <Content Include="Scripts\App\Controller\IndexController.js" />
+    <Content Include="Test\Unit\IndexControllerSpec.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -247,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Test\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -309,9 +302,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Npm.js.1.3.15.7\build\npm.js.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Npm.js.1.3.15.7\build\npm.js.targets'))" />
-    <Error Condition="!Exists('..\packages\Gulp.js.1.0.2\build\gulp.js.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Gulp.js.1.0.2\build\gulp.js.targets'))" />
   </Target>
-  <Import Project="..\packages\Gulp.js.1.0.2\build\gulp.js.targets" Condition="Exists('..\packages\Gulp.js.1.0.2\build\gulp.js.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
